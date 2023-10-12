@@ -36,8 +36,7 @@ jobs:
           docker tag gcr.io/knative-releases/knative.dev/serving/cmd/activator@sha256:624ad8df549de9192e7b0d2f596c08c5996f678b25ff94688464412890126bb1 registry.cn-hangzhou.aliyuncs.com/jaywinz/gcr.io:avtivator
 
       - name: Log in to Docker Hub
-        uses: docker/login-action@v3.0.0
-
+        uses: docker/login-action@v2.2.0
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
