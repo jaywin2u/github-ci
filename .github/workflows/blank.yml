@@ -33,7 +33,8 @@ jobs:
       - name: Run a multi-line script
         run: |
           docker pull gcr.io/knative-releases/knative.dev/serving/cmd/activator@sha256:624ad8df549de9192e7b0d2f596c08c5996f678b25ff94688464412890126bb1
-          docker tag gcr.io/knative-releases/knative.dev/serving/cmd/activator@sha256:624ad8df549de9192e7b0d2f596c08c5996f678b25ff94688464412890126bb1 jaywinz/gcr.io:avticator
+          docker tag gcr.io/knative-releases/knative.dev/serving/cmd/activator@sha256:624ad8df549de9192e7b0d2f596c08c5996f678b25ff94688464412890126bb1 jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.activator:v1.0.1
+
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2.2.0
@@ -44,4 +45,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Push to Docker Registry
         run: |
-          docker push jaywinz/gcr.io:avticator
+          docker push jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.activator:v1.0.1
