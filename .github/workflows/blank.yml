@@ -32,7 +32,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          docker gcr.io/knative-releases/knative.dev/net-istio/cmd/webhook@sha256:75d502bdff93e9c0e4611c2747d868b8d471f8d3a0402394de76ec2d98b89ce3
+          docker pull gcr.io/knative-releases/knative.dev/net-istio/cmd/webhook@sha256:75d502bdff93e9c0e4611c2747d868b8d471f8d3a0402394de76ec2d98b89ce3
           docker tag gcr.io/knative-releases/knative.dev/net-istio/cmd/webhook@sha256:75d502bdff93e9c0e4611c2747d868b8d471f8d3a0402394de76ec2d98b89ce3 jaywinz/gcr.io.knative-releases.knative.dev.net-istio.cmd.webhook:v1.0.1
 
       - name: Log in to Docker Hub
