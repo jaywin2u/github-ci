@@ -32,9 +32,16 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          docker pull gcr.io/knative-releases/knative.dev/serving/cmd/activator@sha256:624ad8df549de9192e7b0d2f596c08c5996f678b25ff94688464412890126bb1
-          docker tag gcr.io/knative-releases/knative.dev/serving/cmd/activator@sha256:624ad8df549de9192e7b0d2f596c08c5996f678b25ff94688464412890126bb1 jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.activator:v1.0.1
-
+          docker pull gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler@sha256:6b77fce9159173ce700cbe8202eb0ab33b2128688baadf34e916b7341889bde0
+          docker tag gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler@sha256:6b77fce9159173ce700cbe8202eb0ab33b2128688baadf34e916b7341889bde0 jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.autoscaler:v1.0.1
+          docker pull gcr.io/knative-releases/knative.dev/serving/cmd/controller@sha256:712ac88a1ec328ad366a0245882061de01bdf631cb21bac2b621af8e20e7082d
+          docker tag gcr.io/knative-releases/knative.dev/serving/cmd/controller@sha256:712ac88a1ec328ad366a0245882061de01bdf631cb21bac2b621af8e20e7082d jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.controller:v1.0.1
+          docker pull gcr.io/knative-releases/knative.dev/serving/cmd/domain-mapping@sha256:5f9d8293f8d8d04cbfeed796ea15cf6dd967d2213f326debfe76983ab58b63fd
+          docker tag gcr.io/knative-releases/knative.dev/serving/cmd/domain-mapping@sha256:5f9d8293f8d8d04cbfeed796ea15cf6dd967d2213f326debfe76983ab58b63fd jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.domain-mapping:v1.0.1
+          docker pull gcr.io/knative-releases/knative.dev/serving/cmd/domain-mapping-webhook@sha256:51800b3435af2cd551f7de5119133de3cb30e3d72ec9df18d5e2e14ec482668f
+          docker tag gcr.io/knative-releases/knative.dev/serving/cmd/domain-mapping-webhook@sha256:51800b3435af2cd551f7de5119133de3cb30e3d72ec9df18d5e2e14ec482668f jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.domain-mapping-webhook:v1.0.1
+          docker pull gcr.io/knative-releases/knative.dev/serving/cmd/webhook@sha256:881a707c3f5b8537adf1fd460405fb8e65ae2676e4591926f9cdfb4454efd350
+          docker tag gcr.io/knative-releases/knative.dev/serving/cmd/webhook@sha256:881a707c3f5b8537adf1fd460405fb8e65ae2676e4591926f9cdfb4454efd350 jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.webhook:v1.0.1
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2.2.0
@@ -45,4 +52,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Push to Docker Registry
         run: |
-          docker push jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.activator:v1.0.1
+          docker push jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.autoscaler:v1.0.1
+          docker push jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.controller:v1.0.1
+          docker push jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.domain-mapping:v1.0.1
+          docker push jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.domain-mapping-webhook:v1.0.1
+          docker push jaywinz/gcr.io.knative-releases.knative.dev.serving.cmd.webhook:v1.0.1
