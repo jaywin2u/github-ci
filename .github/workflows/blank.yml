@@ -32,23 +32,14 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          docker pull gcr.io/knative-releases/knative.dev/eventing/cmd/controller@sha256:675aebfd596f8250293facc686a270dc579960c7ffc439ade38997b7b5432fcb
-          docker tag gcr.io/knative-releases/knative.dev/eventing/cmd/controller@sha256:675aebfd596f8250293facc686a270dc579960c7ffc439ade38997b7b5432fcb jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.controller:v1.0.1
-          docker pull gcr.io/knative-releases/knative.dev/eventing/cmd/mtping@sha256:574e56b00623d53824e942e6e4fb68a0e3ca71a59a18065f31381a235c4e549a
-          docker tag gcr.io/knative-releases/knative.dev/eventing/cmd/mtping@sha256:574e56b00623d53824e942e6e4fb68a0e3ca71a59a18065f31381a235c4e549a jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.mtping:v1.0.1
-          docker pull gcr.io/knative-releases/knative.dev/eventing/cmd/webhook@sha256:6edf3f4242f5168acae422e4b20a2fd385e4dc7b328f17f54bdbeaae2c05d4a8
-          docker tag gcr.io/knative-releases/knative.dev/eventing/cmd/webhook@sha256:6edf3f4242f5168acae422e4b20a2fd385e4dc7b328f17f54bdbeaae2c05d4a8 jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.webhook:v1.0.1
-          docker pull gcr.io/knative-releases/knative.dev/eventing/cmd/in_memory/channel_controller@sha256:f317a2ab47b68770019de8a97c7bb011db584d0c8c50a903e5166d384bf8bcf4
-          docker tag gcr.io/knative-releases/knative.dev/eventing/cmd/in_memory/channel_controller@sha256:f317a2ab47b68770019de8a97c7bb011db584d0c8c50a903e5166d384bf8bcf4 jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.in_memory.channel_controller:v1.0.1
-          docker pull gcr.io/knative-releases/knative.dev/eventing/cmd/in_memory/channel_dispatcher@sha256:5060df205de33a5f7da15e6beeb90ab8d966ea425f3100a1b36761125a26aab4
-          docker tag gcr.io/knative-releases/knative.dev/eventing/cmd/in_memory/channel_dispatcher@sha256:5060df205de33a5f7da15e6beeb90ab8d966ea425f3100a1b36761125a26aab4 jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.in_memory.channel_dispatcher:v1.0.1
-          docker pull gcr.io/knative-releases/knative.dev/eventing/cmd/broker/filter@sha256:102f2804a1c7a13c4d8f870162cdf430283b85d2cd15389da3fe9a32209fb1a5
-          docker tag gcr.io/knative-releases/knative.dev/eventing/cmd/broker/filter@sha256:102f2804a1c7a13c4d8f870162cdf430283b85d2cd15389da3fe9a32209fb1a5 jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.broker.filter:v1.0.1
-          docker pull gcr.io/knative-releases/knative.dev/eventing/cmd/broker/ingress@sha256:05affdaae77c81d3da1b96041b81c90face2f22b36096b61655e80d8383dcc26
-          docker tag gcr.io/knative-releases/knative.dev/eventing/cmd/broker/ingress@sha256:05affdaae77c81d3da1b96041b81c90face2f22b36096b61655e80d8383dcc26 jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.broker.ingress:v1.0.1
-          docker pull gcr.io/knative-releases/knative.dev/eventing/cmd/mtchannel_broker@sha256:24e9d6576947b29922a19c7621eff40402c79fcf2c58446227df92597934192a
-          docker tag gcr.io/knative-releases/knative.dev/eventing/cmd/mtchannel_broker@sha256:24e9d6576947b29922a19c7621eff40402c79fcf2c58446227df92597934192a jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.mtchannel_broker:v1.0.1
+          docker pull gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/receive_adaptersha256:e2d6280f63b345c30d69d06fc72767275a531eae72f38ad5da4322e20fc996f2
+          docker tag gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/receive_adaptersha256:e2d6280f63b345c30d69d06fc72767275a531eae72f38ad5da4322e20fc996f2 jaywinz/gcr.io.knative-releases.knative.dev.eventing-gitlab.cmd.receive_adapter:v1.0.1
+          docker pull gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/controllersha256:3010ab7cc279bd223c874f756d4e95ab28d5df7cde31dee3dbeab08af60422c9
+          docker tag gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/controllersha256:3010ab7cc279bd223c874f756d4e95ab28d5df7cde31dee3dbeab08af60422c9 jaywinz/gcr.io.knative-releases.knative.dev.eventing-gitlab.cmd.controller:v1.0.1
+          docker pull gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/webhooksha256:55e8bdbe4a5105d41cd2f5b83a046d5bc820948f9d84f76aef1c1076768338c3
+          docker tag gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/webhooksha256:55e8bdbe4a5105d41cd2f5b83a046d5bc820948f9d84f76aef1c1076768338c3 jaywinz/gcr.io.knative-releases.knative.dev.eventing-gitlab.cmd.webhook:v1.0.1
 
+          
       - name: Log in to Docker Hub
         uses: docker/login-action@v2.2.0
         with:
@@ -58,14 +49,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Push to Docker Registry
         run: |
-          docker push jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.mtping:v1.0.1
-          docker push jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.controller:v1.0.1
-          docker push jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.webhook:v1.0.1
-          docker push jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.in_memory.channel_controller:v1.0.1
-          docker push jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.in_memory.channel_dispatcher:v1.0.1
-          docker push jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.broker.filter:v1.0.1
-          docker pull gcr.io/knative-releases/knative.dev/eventing/cmd/broker/ingress@sha256:05affdaae77c81d3da1b96041b81c90face2f22b36096b61655e80d8383dcc26
-          docker push jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.broker.ingress:v1.0.1
-          docker push jaywinz/gcr.io.knative-releases.knative.dev.eventing.cmd.mtchannel_broker:v1.0.1
+          docker push jaywinz/gcr.io.knative-releases.knative.dev.eventing-gitlab.cmd.webhook:v1.0.1
+          docker push jaywinz/gcr.io.knative-releases.knative.dev.eventing-gitlab.cmd.controller:v1.0.1
+          docker push jaywinz/gcr.io.knative-releases.knative.dev.eventing-gitlab.cmd.webhook:v1.0.1
+
+          
 
 
