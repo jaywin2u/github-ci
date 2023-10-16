@@ -32,8 +32,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          docker pull gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/receive_adaptersha256:e2d6280f63b345c30d69d06fc72767275a531eae72f38ad5da4322e20fc996f2
-          docker tag gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/receive_adaptersha256:e2d6280f63b345c30d69d06fc72767275a531eae72f38ad5da4322e20fc996f2 jaywinz/gcr.io.knative-releases.knative.dev.eventing-gitlab.cmd.receive_adapter:v1.0.1
+          docker pull gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/receive_adapter@sha256:e2d6280f63b345c30d69d06fc72767275a531eae72f38ad5da4322e20fc996f2
+          docker tag gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/receive_adapter@sha256:e2d6280f63b345c30d69d06fc72767275a531eae72f38ad5da4322e20fc996f2 jaywinz/gcr.io.knative-releases.knative.dev.eventing-gitlab.cmd.receive_adapter:v1.0.1
           docker pull gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/controllersha256:3010ab7cc279bd223c874f756d4e95ab28d5df7cde31dee3dbeab08af60422c9
           docker tag gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/controllersha256:3010ab7cc279bd223c874f756d4e95ab28d5df7cde31dee3dbeab08af60422c9 jaywinz/gcr.io.knative-releases.knative.dev.eventing-gitlab.cmd.controller:v1.0.1
           docker pull gcr.io/knative-releases/knative.dev/eventing-gitlab/cmd/webhooksha256:55e8bdbe4a5105d41cd2f5b83a046d5bc820948f9d84f76aef1c1076768338c3
